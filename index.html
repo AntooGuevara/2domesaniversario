@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Antonio & Sofia</title>
+
+<style>
+
+body{
+margin:0;
+font-family: "Georgia", serif;
+background: linear-gradient(#ffd6e7,#ffffff);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+overflow:hidden;
+}
+
+/* TARJETA */
+.card{
+width:420px;
+background:#fff6f9;
+border-radius:25px;
+padding:30px;
+text-align:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+position:relative;
+overflow:hidden;
+}
+
+/* PANTALLAS */
+.screen{
+position:absolute;
+width:100%;
+top:0;
+left:0;
+opacity:0;
+transform:translateX(100%);
+transition: all .6s ease;
+}
+
+.screen.active{
+opacity:1;
+transform:translateX(0);
+position:relative;
+}
+
+.screen.exit-left{
+transform:translateX(-100%);
+opacity:0;
+}
+
+.screen.exit-right{
+transform:translateX(100%);
+opacity:0;
+}
+
+/* TEXTOS */
+
+h1{
+color:#d63384;
+}
+
+h2{
+color:#c2185b;
+}
+
+.heart{
+font-size:28px;
+color:red;
+}
+
+/* CALENDARIO */
+
+.calendar{
+background:#f7b6d2;
+padding:20px;
+border-radius:15px;
+color:white;
+}
+
+.days{
+display:grid;
+grid-template-columns: repeat(7,1fr);
+gap:6px;
+margin-top:10px;
+}
+
+.day{
+padding:8px;
+border-radius:6px;
+background:rgba(255,255,255,0.15);
+}
+
+.day.heartday{
+background:white;
+color:#e6005c;
+font-weight:bold;
+border-radius:50%;
+}
+
+/* FOTO */
+
+.photo{
+margin:20px auto;
+width:200px;
+height:200px;
+background:#ffd6e7;
+border-radius:15px;
+overflow:hidden;
+}
+
+.photo img{
+width:100%;
+height:100%;
+object-fit:cover;
+}
+
+/* CARTA */
+
+.envelope{
+margin-top:20px;
+background:white;
+padding:20px;
+border-radius:10px;
+border:2px dashed #ff9ecb;
+}
+
+/* BOTONES */
+
+button{
+border:none;
+padding:10px 20px;
+margin:10px;
+border-radius:20px;
+cursor:pointer;
+font-size:14px;
+}
+
+.back{
+background:white;
+border:2px solid #ff7eb3;
+}
+
+.next{
+background:#ff7eb3;
+color:white;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<!-- PANTALLA 1 -->
+
+<div class="screen active">
+
+<div class="heart">❤️</div>
+
+<h1>Felices 2 meses mi corazón de melon</h1>
+
+<p>Antonio ❤️ Sofia</p>
+
+<p>10 de marzo 2026</p>
+
+<button class="next" onclick="next()">NEXT</button>
+
+</div>
+
+<!-- PANTALLA 2 CALENDARIO -->
+
+<div class="screen">
+
+<h2>Nuestro día especial</h2>
+
+<div class="calendar">
+
+<h3>Marzo 2026</h3>
+
+<div class="days">
+
+<div></div><div></div><div></div><div></div><div></div><div></div><div class="day">1</div>
+
+<div class="day">2</div>
+<div class="day">3</div>
+<div class="day">4</div>
+<div class="day">5</div>
+<div class="day">6</div>
+<div class="day">7</div>
+<div class="day">8</div>
+
+<div class="day">9</div>
+<div class="day heartday">❤️ 10</div>
+<div class="day">11</div>
+<div class="day">12</div>
+<div class="day">13</div>
+<div class="day">14</div>
+<div class="day">15</div>
+
+<div class="day">16</div>
+<div class="day">17</div>
+<div class="day">18</div>
+<div class="day">19</div>
+<div class="day">20</div>
+<div class="day">21</div>
+<div class="day">22</div>
+
+<div class="day">23</div>
+<div class="day">24</div>
+<div class="day">25</div>
+<div class="day">26</div>
+<div class="day">27</div>
+<div class="day">28</div>
+<div class="day">29</div>
+
+<div class="day">30</div>
+<div class="day">31</div>
+
+</div>
+</div>
+
+<button class="back" onclick="back()">BACK</button>
+<button class="next" onclick="next()">NEXT</button>
+
+</div>
+
+<!-- PANTALLA 3 CARTA -->
+
+<div class="screen">
+
+<h2>2 meses juntos</h2>
+
+<div class="envelope">
+
+<p>
+Hoy celebramos nuesto segundo aniversario juntos, yo sé que faltan muchos pero quiero decirte que te amo demasiado como no tienes una idea, te aprecio mucho y estoy muy agradecido contigo por tantos momentos especiales que hemos tenido, aunque a veces tengamos nuestros altos y bajos, siempre encontramos una manera de estar bien y demostrar el amor que los dos nos merecemos.
+</p>
+
+<p>
+Desde el día que te conocí algo cambió para bien en mi, tu me hiciste cambiar para ser una mejor persona y no solo contigo, sino en mi entorno en general y eso es algo que siempre voy a estar agradecido contigo. Todos los días desde que hablamos son distintos porque puedo hablar con alguien de cualquier cosa y sé que vamos a soltar alguna carcajada ya que eso nos hace tener esta conexión tan bonita que tenemos.
+</p>
+
+<p>
+Espero seguir teniendo miles de aniversarios contigo, te amo demasiado, tanto que unas simples palabras no pueden expresar mis sentimientos, que Dios bendiga nuestra relación y que duremos mucho tiempo. Te amo mucho mi corazón de melón.
+</p>
+
+</div>
+
+<button class="back" onclick="back()">BACK</button>
+<button class="next" onclick="next()">NEXT</button>
+
+</div>
+
+<!-- PANTALLA 4 FOTO -->
+
+<div class="screen">
+
+<h2>Eres lo mejor que me ha pasado en mi vida</h2>
+
+<div class="photo">
+<img src="foto.jpg">
+</div>
+
+<p>
+Genuinamente puedo decir que eres el amor de mi vida. Te amo con todo corazón y mi ser. 
+</p>
+
+<button class="back" onclick="back()">BACK</button>
+
+</div>
+
+</div>
+
+<script>
+
+let current = 0
+let screens = document.querySelectorAll(".screen")
+
+function show(newIndex, direction){
+
+let currentScreen = screens[current]
+let nextScreen = screens[newIndex]
+
+currentScreen.classList.remove("active")
+
+if(direction === "next"){
+currentScreen.classList.add("exit-left")
+}else{
+currentScreen.classList.add("exit-right")
+}
+
+setTimeout(()=>{
+currentScreen.classList.remove("exit-left","exit-right")
+nextScreen.classList.add("active")
+current = newIndex
+},300)
+
+}
+
+function next(){
+if(current < screens.length-1){
+show(current+1,"next")
+}
+}
+
+function back(){
+if(current > 0){
+show(current-1,"back")
+}
+}
+
+</script>
+
+</body>
+</html>
